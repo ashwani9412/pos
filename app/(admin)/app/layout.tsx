@@ -1,12 +1,13 @@
-import { Footer } from '@/components/super-admin/layouts/footer'
-import { NavBar } from '@/components/super-admin/layouts/header'
-import { SideBar } from '@/components/super-admin/layouts/sidebar'
-import React from 'react'
+import { SideBar } from "@/components/admin/layout/sidebar";
+import { Footer } from "@/components/super-admin/layouts/footer";
+import { NavBar } from "@/components/super-admin/layouts/header";
+
+import React from "react";
 
 export const metadata = {
-    title: "App Layout",
-    discription: "App Layout"
-}
+  title: "App Layout",
+  discription: "App Layout",
+};
 
 export default function layout() {
   return (
@@ -14,18 +15,17 @@ export default function layout() {
       <body>
         <div className="h-full relative">
           <div className="hidden h-full md:flex md:w-72 md:flex-col md:fixed md:inset-y-0 z-[80] bg-gray-900">
-            <SideBar/>
+            <SideBar />
           </div>
           <main className="md:pl-72">
-            Root super admin Layout 
-            main content Area
-            <NavBar />
+            Webapp main area
+            {/* <NavBar /> */}
             {/* {JSON.stringify(session)} */}
             {/* {children} */}
           </main>
-            <Footer/>
+          {/* <Footer /> */}
         </div>
       </body>
     </html>
-  )
+  );
 }
