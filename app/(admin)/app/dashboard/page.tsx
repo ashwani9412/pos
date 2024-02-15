@@ -1,4 +1,5 @@
 import React from 'react'
+import { Dashboard } from '@/components/admin/dashboard'
 
 export const metadata = {
     title: "App Dashboard",
@@ -6,6 +7,6 @@ export const metadata = {
 }
 export default function DashboardPage() {
   return (
-    <div>DashboardPage</div>
+    <div><Dashboard/></div>
   )
 }

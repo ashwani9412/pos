@@ -1,17 +1,3 @@
-import {
-  CreditCard,
-  GanttChartIcon,
-  LayoutDashboard,
-  PackageSearch,
-  Percent,
-  PictureInPicture2,
-  Settings,
-  ShoppingBag,
-  Sparkles,
-  User,
-  Users,
-} from "lucide-react";
-
 import { SideNavItem } from "@/types/sidebar";
 import { Icon } from "@iconify/react";
 const basePath = "/app";
@@ -25,41 +11,70 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
   {
     title: "Parties",
     path: `${basePath}/parties`,
-    icon: <Icon icon="lucide:mail" width="24" height="24" />,
+    icon: <Icon icon="lucide:users" width="24" height="24" />,
   },
   {
     title: "Products",
     path: `${basePath}/products`,
-    icon: <Icon icon="lucide:folder" width="24" height="24" />,
+    icon: <Icon icon="lucide:shopping-bag" width="24" height="24" />,
     submenu: true,
     subMenuItems: [
-      { title: "Add Product", path: "/projects" },
-      { title: "Product List", path: "/projects/web-design" },
-      { title: "Category", path: "/projects/graphic-design" },
+      { title: "Add Product", path: `${basePath}/products/add-product`},
+      { title: "Product List", path: `${basePath}/products/list`},
+      { title: "Category", path: `${basePath}/products/category`},
     ],
   },
 
   {
     title: "Sales",
     icon: <Icon icon="lucide:indian-rupee" width="24" height="24" />,
-    path: "/sales",
+    path: `${basePath}/sales`,
     submenu: true,
     subMenuItems: [
       {
-        title: "Add Sale",
-        path: "/parties",
+        title: "Sale/Bill Invoice",
+        path: `${basePath}/sales/invoice`,
       },
       {
         title: "Sale list",
-        path: "/parties",
+        path: `${basePath}/sales/list`,
       },
       {
         title: "POS",
-        path: "/parties",
+        path: `${basePath}/sales/pos`,
       },
     ],
   },
-
+  {
+    title: "Expenses",
+    path: `${basePath}/expense`,
+    icon: <Icon icon="lucide:calculator" width="24" height="24" />,
+  },
+  {
+    title: "Quotation",
+    path: `${basePath}/quotation`,
+    icon: <Icon icon="lucide:text-quote" width="24" height="24" />,
+  },
+  {
+    title: "My Online Store",
+    path: `${basePath}/store`,
+    icon: <Icon icon="lucide:store" width="24" height="24" />,
+  },
+  {
+    title: "Cash/Bank",
+    path: `${basePath}/cash-bank`,
+    icon: <Icon icon="lucide:badge-indian-rupee" width="24" height="24" />,
+  },
+  {
+    title: "HRM",
+    path: `${basePath}/hrm-portal`,
+    icon: <Icon icon="lucide:handshake" width="24" height="24" />,
+  },
+  {
+    title: "Reports",
+    path: `${basePath}/reports`,
+    icon: <Icon icon="lucide:file-bar-chart" width="24" height="24" />,
+  },
   {
     title: "Settings",
     path: "/settings",
