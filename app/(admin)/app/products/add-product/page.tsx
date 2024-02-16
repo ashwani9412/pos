@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import { AddEditProduct } from "../components/forms/add-edit";
+import BreadCrumbs from "@/components/admin/common/breadcrums";
 
 export const metadata = {
-    title: "Add product"
-}
+  title: "Add product",
+};
 
 export default function AddProductPage() {
   return (
-    <div>AddProductPage</div>
-  )
+    <div>
+      <BreadCrumbs />
+      <AddEditProduct />
+    </div>
+  );
 }

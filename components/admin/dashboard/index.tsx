@@ -1,13 +1,13 @@
-import React from 'react'
-import { DashboardCard } from './card'
-import DashboardLineChart from './lineChart'
+import React from "react";
+import { DashboardCard } from "./card";
+import DashboardLineChart from "@/components/admin/dashboard/line-chart";
 
-export const Dashboard = () =>{
+export const Dashboard = () => {
   return (
     <>
-    <DashboardCard/>
-    <br/>
-    <DashboardLineChart/>
+      <DashboardCard />
+      <br />
+      <DashboardLineChart />
     </>
-  )
-}
+  );
+};
