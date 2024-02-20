@@ -1,4 +1,6 @@
+import Parties from '@/components/admin/parties'
 import React from 'react'
+
 
 export const metadata = {
     title: "Parties"
@@ -6,6 +8,6 @@ export const metadata = {
 
 export default function PartiesPage() {
   return (
-    <div>PartiesHomePage</div>
+    <div><Parties/></div>
   )
 }
