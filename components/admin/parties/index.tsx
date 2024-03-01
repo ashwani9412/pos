@@ -166,7 +166,9 @@ const Parties = () => {
           </div>
         </div>
       </div>
+      <div className="">
       <DataTable/>
+      </div>
     </>
   );
 };
