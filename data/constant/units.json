@@ -1,0 +1,807 @@
+[
+  {
+    "id": "a7104f08-26ee-4d26-b5ab-b405a18fb410",
+    "unit_long": "LADI",
+    "unit_short": "LAD"
+  },
+  {
+    "id": "9f5dfdc8-fa24-461f-8962-481331ef12e2",
+    "unit_long": "PETI",
+    "unit_short": "PET"
+  },
+  {
+    "id": "57d92357-afe5-4595-97e0-9bd2e745578b",
+    "unit_long": "JARS",
+    "unit_short": "JAR"
+  },
+  {
+    "id": "d11ce4f8-d7c8-4829-9c4c-c6bf0359e782",
+    "unit_long": "HANGER",
+    "unit_short": "HEGAR"
+  },
+  {
+    "id": "cce56599-9754-49f5-be7f-bd3c4370bb70",
+    "unit_long": "POUCH",
+    "unit_short": "POCH"
+  },
+  {
+    "id": "f18ad305-f764-436b-9849-b452fcd8552d",
+    "unit_long": "BORA",
+    "unit_short": "BOR"
+  },
+  {
+    "id": "113d408d-64ac-4ed8-9598-f69523cdba88",
+    "unit_long": "COIL",
+    "unit_short": "COIL"
+  },
+  {
+    "id": "7589f73c-087c-4f38-a574-94f9d1606d1f",
+    "unit_long": "FEET",
+    "unit_short": "FT"
+  },
+  {
+    "id": "706895ce-908e-46e1-8668-ade45a8f9c47",
+    "unit_long": "INCHES",
+    "unit_short": "IN"
+  },
+  {
+    "id": "2d331697-e306-4eb7-88c7-bb157574d68f",
+    "unit_long": "PORTION",
+    "unit_short": "PRT"
+  },
+  {
+    "id": "a74399c1-b683-4155-a3d9-a4d4c9428da8",
+    "unit_long": "CASE",
+    "unit_short": "CASE"
+  },
+  {
+    "id": "6dfb1b1a-8f4e-4e3f-bcee-9cde2b7e5bab",
+    "unit_long": "EACH",
+    "unit_short": "EACH"
+  },
+  {
+    "id": "b6a62c4e-362b-4eb5-9161-735455d8ded7",
+    "unit_long": "CAPSULES",
+    "unit_short": "CPS"
+  },
+  {
+    "id": "bca0ba16-aeeb-433e-81a8-6f750e072376",
+    "unit_long": "PADS",
+    "unit_short": "PADS"
+  },
+  {
+    "id": "acf89865-c049-4785-8aa7-c11884021ab4",
+    "unit_long": "REEL",
+    "unit_short": "REEL"
+  },
+  {
+    "id": "8e9179fd-ed66-43ea-b261-a17a4c032e6b",
+    "unit_long": "BLISTER",
+    "unit_short": "BLISTER"
+  },
+  {
+    "id": "1a4ad289-8752-45ae-ae31-f45e4da7c05b",
+    "unit_long": "PAD",
+    "unit_short": "PAD"
+  },
+  {
+    "id": "fc4931fd-d15f-486a-a411-b7dbb139a7ac",
+    "unit_long": "PIECES",
+    "unit_short": "PCS"
+  },
+  {
+    "id": "8e247628-051b-4365-9e6c-7b3aecd59b32",
+    "unit_long": "PAIRS",
+    "unit_short": "PRS"
+  },
+  {
+    "id": "6c5ceb25-4909-47bc-b56b-c7015b0e43f3",
+    "unit_long": "QUINTAL",
+    "unit_short": "QTL"
+  },
+  {
+    "id": "d0a27836-0c18-43eb-a736-dfdabdc2d245",
+    "unit_long": "ROLLS",
+    "unit_short": "ROL"
+  },
+  {
+    "id": "01a74a31-39df-41c4-903e-d75118d5b23b",
+    "unit_long": "SETS",
+    "unit_short": "SET"
+  },
+  {
+    "id": "b9eb3b7a-1b43-4edc-a0e9-dd72ce5ae2e8",
+    "unit_long": "SQUARE FEET",
+    "unit_short": "SQF"
+  },
+  {
+    "id": "a00631c6-fdd6-4029-9f81-63da25a7ec2f",
+    "unit_long": "SQUARE METERS",
+    "unit_short": "SQM"
+  },
+  {
+    "id": "e15c74d5-3094-4a50-8760-9df38d0354ed",
+    "unit_long": "SQUARE YARDS",
+    "unit_short": "SQY"
+  },
+  {
+    "id": "6ecbb30d-4a66-4ac4-bd89-975ddfdd07bd",
+    "unit_long": "TABLETS",
+    "unit_short": "TBS"
+  },
+  {
+    "id": "efdf67ee-89c3-40eb-ab13-69d238f9cc24",
+    "unit_long": "TEN GROSS",
+    "unit_short": "TGM"
+  },
+  {
+    "id": "6de2e9e4-d1d5-45c6-985a-7725cf5a8ce1",
+    "unit_long": "THOUSANDS",
+    "unit_short": "THD"
+  },
+  {
+    "id": "0b7f88bb-1e22-40f5-a92b-ba215ab29e52",
+    "unit_long": "TONNES",
+    "unit_short": "TON"
+  },
+  {
+    "id": "f03bc17c-1c18-47bd-86ac-c335ca7028de",
+    "unit_long": "TUBES",
+    "unit_short": "TUB"
+  },
+  {
+    "id": "58818475-05d8-4227-b99f-9cbba53e8d1a",
+    "unit_long": "US GALLONS",
+    "unit_short": "UGS"
+  },
+  {
+    "id": "e750e33a-af12-4bb0-a9be-d07fd188bfdd",
+    "unit_long": "UNITS",
+    "unit_short": "UNT"
+  },
+  {
+    "id": "ae1f04fe-0dd5-457a-9a8e-cbc57ea38849",
+    "unit_long": "YARDS",
+    "unit_short": "YDS"
+  },
+  {
+    "id": "1cef2c69-b439-4c90-b50d-9d248fb740ff",
+    "unit_long": "OTHERS",
+    "unit_short": "OTH"
+  },
+  {
+    "id": "8e2578bf-65e1-49ac-9027-9954ff474c2b",
+    "unit_long": "HOURS",
+    "unit_short": "HRS"
+  },
+  {
+    "id": "41f88e61-3d5e-48e9-b522-090a438f5181",
+    "unit_long": "MINUTES",
+    "unit_short": "MINS"
+  },
+  {
+    "id": "100e9979-9761-4dc2-bdae-0bc9bd40f44c",
+    "unit_long": "LITRE",
+    "unit_short": "LTR"
+  },
+  {
+    "id": "b7dd2d6e-d46d-4bbf-b890-734b364cdeab",
+    "unit_long": "METRIC TON",
+    "unit_short": "MTON"
+  },
+  {
+    "id": "f378f7f2-4fc1-48d4-bd4d-b481b21b2637",
+    "unit_long": "MILLIGRAM",
+    "unit_short": "MLG"
+  },
+  {
+    "id": "10f3c128-e49a-433c-91e9-c73abdf9c743",
+    "unit_long": "BUCKETS",
+    "unit_short": "BCK"
+  },
+  {
+    "id": "7ee083c2-816b-4711-8591-7e6b23b42cc5",
+    "unit_long": "GLASSES",
+    "unit_short": "GLS"
+  },
+  {
+    "id": "c7f694e1-7ec3-4303-a61e-1822d2308e66",
+    "unit_long": "PLATES",
+    "unit_short": "PLT"
+  },
+  {
+    "id": "1a9072c7-8fe4-44f3-8b3a-daef479dc777",
+    "unit_long": "CARATS",
+    "unit_short": "CTS"
+  },
+  {
+    "id": "9bae2693-b02f-4952-9652-616baa3f4a1f",
+    "unit_long": "STRIPS",
+    "unit_short": "STRP"
+  },
+  {
+    "id": "0b317fc3-aaf7-4f30-ad39-3ae2753983c0",
+    "unit_long": "CUBIC FOOT",
+    "unit_short": "CFT"
+  },
+  {
+    "id": "8f9041cb-775d-472b-ab88-518b632d0e81",
+    "unit_long": "VIALS",
+    "unit_short": "VIAL"
+  },
+  {
+    "id": "69c2c200-0914-40ff-be6f-d2eb264aaadf",
+    "unit_long": "BAGS",
+    "unit_short": "BAG"
+  },
+  {
+    "id": "bee80581-a3cd-41df-8d91-2cad66a9d213",
+    "unit_long": "BALE",
+    "unit_short": "BAL"
+  },
+  {
+    "id": "356ca437-20e9-4c6e-9e47-91b9fa0c0c6b",
+    "unit_long": "BUNDLES",
+    "unit_short": "BDL"
+  },
+  {
+    "id": "eb2f5ec7-b155-4897-af31-44555f1ec578",
+    "unit_long": "BUCKLES",
+    "unit_short": "BKL"
+  },
+  {
+    "id": "ad40ae54-c5ff-453b-9d5d-a57f0e0cffeb",
+    "unit_long": "BILLIONS OF UNITS",
+    "unit_short": "BOU"
+  },
+  {
+    "id": "8884afc6-66ba-4aac-a5ba-b08169a675fe",
+    "unit_long": "BOX",
+    "unit_short": "BOX"
+  },
+  {
+    "id": "497dcb8c-4309-4d93-9296-e4cdfe200b9e",
+    "unit_long": "BOTTLES",
+    "unit_short": "BTL"
+  },
+  {
+    "id": "dacfbbca-41cf-4773-b604-f04f70801143",
+    "unit_long": "BUNCHES",
+    "unit_short": "BUN"
+  },
+  {
+    "id": "9e4b1034-4b8e-454a-b340-f41e633c55a7",
+    "unit_long": "CANS",
+    "unit_short": "CAN"
+  },
+  {
+    "id": "9b3a060d-577f-4357-b287-5f5a5c7f2611",
+    "unit_long": "CUBIC METER",
+    "unit_short": "CBM"
+  },
+  {
+    "id": "2a08551f-5521-4705-8c3a-bcbc1514b0ab",
+    "unit_long": "CUBIC CENTIMETER",
+    "unit_short": "CCM"
+  },
+  {
+    "id": "a3f9553b-c611-47b0-b728-3bb3a326c9a2",
+    "unit_long": "CENTIMETER",
+    "unit_short": "CMS"
+  },
+  {
+    "id": "a37aa776-9dea-4bcb-9893-6c34b4f26756",
+    "unit_long": "CARTONS",
+    "unit_short": "CTN"
+  },
+  {
+    "id": "593bf614-58df-4804-9a21-f1996151f4f2",
+    "unit_long": "DOZEN",
+    "unit_short": "DOZ"
+  },
+  {
+    "id": "beae884b-003e-4f17-8cfb-a39eb569908b",
+    "unit_long": "DRUM",
+    "unit_short": "DRM"
+  },
+  {
+    "id": "e83c3e1c-c48d-40c3-95b2-8305121f4be6",
+    "unit_long": "GREAT GROSS",
+    "unit_short": "GGR"
+  },
+  {
+    "id": "453d5f6c-b5b8-4e26-92fa-7023e894e29f",
+    "unit_long": "GRAMS",
+    "unit_short": "GMS"
+  },
+  {
+    "id": "2efabf79-18ee-4e21-8027-0add30814151",
+    "unit_long": "GROSS",
+    "unit_short": "GRS"
+  },
+  {
+    "id": "00fcb7c9-ca80-490f-a35e-2f9919bac080",
+    "unit_long": "GROSS YARDS",
+    "unit_short": "GYD"
+  },
+  {
+    "id": "731f37e2-8c2b-478d-9f4e-86616576cc5f",
+    "unit_long": "KILOGRAMS",
+    "unit_short": "KGS"
+  },
+  {
+    "id": "61ebfdc0-76b4-4d22-b54e-015b9577ab69",
+    "unit_long": "KILOLITER",
+    "unit_short": "KLR"
+  },
+  {
+    "id": "f2c1eeba-94c7-4fd4-8ab4-9b2169c1bb49",
+    "unit_long": "KILOMETRE",
+    "unit_short": "KME"
+  },
+  {
+    "id": "3389b3bc-250d-46d3-b8c5-c112268d7d1a",
+    "unit_long": "MILLILITRE",
+    "unit_short": "MLT"
+  },
+  {
+    "id": "fbcfa85d-450b-4970-b41c-e0d7a82af3cb",
+    "unit_long": "METERS",
+    "unit_short": "MTR"
+  },
+  {
+    "id": "e75de1e2-24a8-4571-acbb-842150d8558f",
+    "unit_long": "NUMBERS",
+    "unit_short": "NOS"
+  },
+  {
+    "id": "94426e27-b693-4ecf-a374-01ce38500a62",
+    "unit_long": "PACKS",
+    "unit_short": "PAC"
+  },
+  {
+    "id": "f2951709-70a5-422e-bc9c-3ed9b6f3269b",
+    "unit_long": "CENTS",
+    "unit_short": "CNT"
+  },
+  {
+    "id": "8ca519d2-531c-4940-beb2-f0aa427286d7",
+    "unit_long": "RUNNING FOOT",
+    "unit_short": "RFT"
+  },
+  {
+    "id": "700c4647-0964-4eb3-abf2-eadb1b80c0c9",
+    "unit_long": "RIM",
+    "unit_short": "RIM"
+  },
+  {
+    "id": "0a4150c6-d661-466a-a2c7-e12ffcaf2a53",
+    "unit_long": "TRP",
+    "unit_short": "TRIP"
+  },
+  {
+    "id": "2781c029-f038-4b5f-8dc5-987b66346f2e",
+    "unit_long": "TIN",
+    "unit_short": "TIN"
+  },
+  {
+    "id": "43997cdd-6f1c-407c-b1a2-cb199f9c3ec9",
+    "unit_long": "CHUDI",
+    "unit_short": "CHUDI"
+  },
+  {
+    "id": "6962fd8e-da43-4844-a75b-53d9ede241a6",
+    "unit_long": "PATTA",
+    "unit_short": "PATTA"
+  },
+  {
+    "id": "48785322-5364-4434-a741-bf347b6fba6f",
+    "unit_long": "KIT",
+    "unit_short": "KIT"
+  },
+  {
+    "id": "67b7d4a8-5be7-4bee-96dd-fc1609b81f9f",
+    "unit_long": "SLEVES",
+    "unit_short": "SLEVES"
+  },
+  {
+    "id": "94a13ddd-1aaa-4a58-b06b-67185ad292bb",
+    "unit_long": "CUBIC FEET",
+    "unit_short": "CUFT"
+  },
+  {
+    "id": "d82229ab-9010-4e67-8660-134fb6342bc1",
+    "unit_long": "RUNNING METER",
+    "unit_short": "RMT"
+  },
+  {
+    "id": "6172d82f-ed71-4a0f-b4da-f48dd9c17bce",
+    "unit_long": "TRAYS",
+    "unit_short": "TRY"
+  },
+  {
+    "id": "f8c49aba-da01-4902-b325-d35bb3f34b74",
+    "unit_long": "AMPOULE",
+    "unit_short": "AMP"
+  },
+  {
+    "id": "05ae5008-66da-47a7-ad1d-9ef605fe312c",
+    "unit_long": "PAIR",
+    "unit_short": "PAIR"
+  },
+  {
+    "id": "5e4c014e-09bf-424c-bd3f-f39a3eb88a99",
+    "unit_long": "AANA",
+    "unit_short": "ANA"
+  },
+  {
+    "id": "e1e4d374-31e3-4473-8c86-960fd2eb3dcd",
+    "unit_long": "CUBIC FEET PER MINUTE",
+    "unit_short": "CFM"
+  },
+  {
+    "id": "2b9a7147-cb7f-49af-9139-519522e82627",
+    "unit_long": "YEARS",
+    "unit_short": "YRS"
+  },
+  {
+    "id": "534f331e-fd52-4932-a9f0-df3402892d95",
+    "unit_long": "MONTH ",
+    "unit_short": "UOM"
+  },
+  {
+    "id": "c360e5ab-8399-492f-b083-1116e7bf0220",
+    "unit_long": "MAN-DAYS",
+    "unit_short": "MAN-DAY"
+  },
+  {
+    "id": "85a36425-9a9d-4637-97a4-b43bbdb34b6e",
+    "unit_long": "NIGHTS",
+    "unit_short": "NIGHT"
+  },
+  {
+    "id": "cc565b6f-232e-493e-9271-a9b2ddb2436a",
+    "unit_long": "DAYS",
+    "unit_short": "DAY"
+  },
+  {
+    "id": "c23ca44a-9c7c-42c2-81ae-f878240114bf",
+    "unit_long": "SQUARE INCHES",
+    "unit_short": "SQIN"
+  },
+  {
+    "id": "f83aa2d9-83d7-4bbe-bd75-39eac288270a",
+    "unit_long": "WEEKS",
+    "unit_short": "WEEK"
+  },
+  {
+    "id": "bf2b36bb-9d1d-4c01-b205-1360842762d9",
+    "unit_long": "PERSONS",
+    "unit_short": "PERSON"
+  },
+  {
+    "id": "55a76fd3-ac99-4db7-8653-a673092b38c6",
+    "unit_long": "LOT",
+    "unit_short": "LOT"
+  },
+  {
+    "id": "da1ceaa6-6f93-465b-b13c-8df211cece70",
+    "unit_long": "SACHET",
+    "unit_short": "SAC"
+  },
+  {
+    "id": "459229cb-5e0d-49ce-b8a3-0f545bb3679a",
+    "unit_long": "REAM",
+    "unit_short": "REAM"
+  },
+  {
+    "id": "e00cceed-3337-4075-bde0-dff29320bb9f",
+    "unit_long": "BRASS",
+    "unit_short": "BRASS"
+  },
+  {
+    "id": "6da9473a-8cdf-42e5-a29e-baece381f6b3",
+    "unit_long": "NONE",
+    "unit_short": "NONE"
+  },
+  {
+    "id": "1b019fc8-97b9-442f-9c4e-665ea521bb72",
+    "unit_long": "COPY",
+    "unit_short": "COPY"
+  },
+  {
+    "id": "73e66292-9d44-4682-a9df-10cc61915290",
+    "unit_long": "TICKET",
+    "unit_short": "TKT"
+  },
+  {
+    "id": "73f1383d-8f8b-4f0e-b7e9-b1ab32aee83a",
+    "unit_long": "KILOWATT",
+    "unit_short": "KW"
+  },
+  {
+    "id": "78c897f8-a733-4b2f-9ae3-8329c7239c24",
+    "unit_long": "WATT",
+    "unit_short": "W"
+  },
+  {
+    "id": "24f7fcc6-0c19-4ceb-9b2c-1364aeb89306",
+    "unit_long": "MBPS",
+    "unit_short": "MBPS"
+  },
+  {
+    "id": "1ff4287c-d61b-4cc0-9d49-2bfc80493253",
+    "unit_long": "ACRE",
+    "unit_short": "AC"
+  },
+  {
+    "id": "6aa08cf1-1306-4ede-a1d1-774a7ad98a3b",
+    "unit_long": "HECTARE",
+    "unit_short": "HA"
+  },
+  {
+    "id": "226b7854-272c-4574-8845-e7404254d6a2",
+    "unit_long": "BOLUS",
+    "unit_short": "BOLUS"
+  },
+  {
+    "id": "4912a59c-e069-42f5-8539-310ee28189df",
+    "unit_long": "AAAAAAAAAAA",
+    "unit_short": "G NEX"
+  },
+  {
+    "id": "bc94a1a9-64de-4720-9c29-9085a12c7d89",
+    "unit_long": "KILOVOLT-AMP",
+    "unit_short": "KVA"
+  },
+  {
+    "id": "905d0e8f-bbd4-4933-af4a-b59e79cc85ba",
+    "unit_long": "POINT",
+    "unit_short": "PT"
+  },
+  {
+    "id": "8cdd0ee8-fd12-4cde-bb8c-2373553869cd",
+    "unit_long": "MARK",
+    "unit_short": "MRK"
+  },
+  {
+    "id": "127daba0-dc91-447e-bdca-0bf8366035f3",
+    "unit_long": "STONE",
+    "unit_short": "STONE"
+  },
+  {
+    "id": "68e43bb1-bd05-423b-bdf8-fa30199a4c9d",
+    "unit_long": "BRICK",
+    "unit_short": "BRICK "
+  },
+  {
+    "id": "233ca90b-471e-4a9a-8b10-519eea9c69f9",
+    "unit_long": "PACKETS",
+    "unit_short": "PKT"
+  },
+  {
+    "id": "fefa310d-6a73-4c8f-8cbe-11c4b20cee49",
+    "unit_long": "BARNI",
+    "unit_short": "BAR"
+  },
+  {
+    "id": "f0849cdd-1932-4bb7-99b7-dd07666acb47",
+    "unit_long": "SHEET",
+    "unit_short": "SHEET"
+  },
+  {
+    "id": "05543328-177d-40aa-8673-5f0aea2ae4e2",
+    "unit_long": "ITEM ID",
+    "unit_short": "ITEM ID"
+  },
+  {
+    "id": "c96766f1-4bc9-4ee9-b591-2f7bc64cc4fb",
+    "unit_long": "MILLIMETER",
+    "unit_short": "MM"
+  },
+  {
+    "id": "d8477f0e-db92-4995-a632-9f871ac20bdc",
+    "unit_long": "CONTAINER",
+    "unit_short": "CONT"
+  },
+  {
+    "id": "49094be0-77e4-4711-948f-c4600cd4175d",
+    "unit_long": "SQUARE CENTIMETERS",
+    "unit_short": "SQCM"
+  },
+  {
+    "id": "0dfd73ca-96cf-433f-80ea-ddfef1dcce03",
+    "unit_long": "INSERTION",
+    "unit_short": "INS"
+  },
+  {
+    "id": "7b9fc442-3add-467a-acea-587a408b2f1e",
+    "unit_long": "LIBRA PONDO",
+    "unit_short": "LBS"
+  },
+  {
+    "id": "c5ddbe03-b460-43a3-8c33-40f9bc5228a3",
+    "unit_long": "LENGTH",
+    "unit_short": "LENG"
+  },
+  {
+    "id": "3835f853-c423-4f77-9098-35793665876b",
+    "unit_long": "GEL",
+    "unit_short": "GEL"
+  },
+  {
+    "id": "615dcbbc-20e1-40eb-91f4-cac47fc6e6ef",
+    "unit_long": "SYRUP",
+    "unit_short": "SYRP"
+  },
+  {
+    "id": "749a3195-2e52-45ba-bedb-6bfe0caae278",
+    "unit_long": "SESSION",
+    "unit_short": "SSN"
+  },
+  {
+    "id": "9cde70de-b5ed-4838-8d2b-529e7889a2d4",
+    "unit_long": "KATTA",
+    "unit_short": "KT"
+  },
+  {
+    "id": "43d96f6c-b121-43d7-9804-e2b65c1009b8",
+    "unit_long": "OUTER",
+    "unit_short": "OR"
+  },
+  {
+    "id": "2fecbbfb-fe82-4062-acd8-7725a604e052",
+    "unit_long": "QUANTITY",
+    "unit_short": "QTY"
+  },
+  {
+    "id": "a4bc5bf0-b27b-45e6-94d5-9b4ecf9bcd0d",
+    "unit_long": "CARD",
+    "unit_short": "CARD"
+  },
+  {
+    "id": "fef39b9b-2311-42e0-ab8a-b479daa4474d",
+    "unit_long": "BALLS",
+    "unit_short": "BALL"
+  },
+  {
+    "id": "02342012-b635-41f4-9f6e-7c9a1a4eeca8",
+    "unit_long": "MILLICOULOMB",
+    "unit_short": "M/C"
+  },
+  {
+    "id": "45102a03-3f41-4161-951a-6a4bbb702167",
+    "unit_long": "TEST",
+    "unit_short": "TEST"
+  },
+  {
+    "id": "c76b651a-d2ff-4ed4-8a99-1f39decd6749",
+    "unit_long": "CAP",
+    "unit_short": "CAP"
+  },
+  {
+    "id": "6a2eb1c3-5cfb-41c7-ba5a-4e9720272751",
+    "unit_long": "BOOK",
+    "unit_short": "BK"
+  },
+  {
+    "id": "71716e43-94c9-4021-ace3-865bb3de37de",
+    "unit_long": "CHOKA",
+    "unit_short": "CHOKA"
+  },
+  {
+    "id": "7f5c62f5-e02d-4f51-b095-25f40a4a177d",
+    "unit_long": "DANGLER",
+    "unit_short": "DANGLER"
+  },
+  {
+    "id": "0f37d419-7e97-46bd-be56-058733021a58",
+    "unit_long": "STICKERS",
+    "unit_short": "STICKER"
+  },
+  {
+    "id": "edfe0f05-3aa1-4c03-9ba2-6b3651df53e2",
+    "unit_long": "FTS",
+    "unit_short": "FTS"
+  },
+  {
+    "id": "6c14d7f3-39d7-4dc5-b1d2-6deb0c9e712c",
+    "unit_long": "CUP",
+    "unit_short": "CUP"
+  },
+  {
+    "id": "a0ef5490-06e2-4640-a041-d23c703658b8",
+    "unit_long": "SERVICE",
+    "unit_short": "SERVICE"
+  },
+  {
+    "id": "81b43fa1-723f-4fd5-a91b-1238dd459a5b",
+    "unit_long": "SKINS",
+    "unit_short": "SKINS"
+  },
+  {
+    "id": "470ac372-924c-4ca7-875a-52b9c577d597",
+    "unit_long": "PHILE",
+    "unit_short": "PHILE"
+  },
+  {
+    "id": "950f96bd-8b35-4b9b-977b-c66eb0ed58b3",
+    "unit_long": "HELMET",
+    "unit_short": "HMT"
+  },
+  {
+    "id": "030c1cb7-b2e7-470f-a82a-f281de8b6f9e",
+    "unit_long": "RATTI",
+    "unit_short": "RTI"
+  },
+  {
+    "id": "0f9dd03f-6b00-4625-aa7b-4e400ff47f7e",
+    "unit_long": "FREE",
+    "unit_short": "FREE"
+  },
+  {
+    "id": "4af41ff3-84ad-437e-a190-b454e380ae09",
+    "unit_long": "JOB",
+    "unit_short": "JOB"
+  },
+  {
+    "id": "eb5a1258-79e3-4662-80fc-13062b80e659",
+    "unit_long": "FIT",
+    "unit_short": "FIT"
+  },
+  {
+    "id": "0254db6a-68da-4cae-a59d-da930643ba64",
+    "unit_long": "SPRAY",
+    "unit_short": "SPRAY"
+  },
+  {
+    "id": "ea16b99c-b03d-4ec5-9e6f-9e987175ecea",
+    "unit_long": "OINTMENT",
+    "unit_short": "OINT"
+  },
+  {
+    "id": "64b468f3-945e-473b-958c-d327a124915e",
+    "unit_long": "DROP",
+    "unit_short": "DROP"
+  },
+  {
+    "id": "45cfd175-dc1c-4576-873e-ed85be0780aa",
+    "unit_long": "METRIC MILLION BRITISH THERMAL UNIT",
+    "unit_short": "MMBTU"
+  },
+  {
+    "id": "ad745e38-c9a4-4499-b08d-c30e652e0e5d",
+    "unit_long": "DAILY",
+    "unit_short": "DAILY"
+  },
+  {
+    "id": "03656f64-9ffc-42d0-b4fd-10760af409e6",
+    "unit_long": "IJN",
+    "unit_short": "INJECTION"
+  },
+  {
+    "id": "97b24632-079a-499c-808b-b0eaaa7a6a84",
+    "unit_long": "INJ",
+    "unit_short": "INJECTION "
+  },
+  {
+    "id": "195016ef-5d92-4915-bf33-6bd4be18b3c2",
+    "unit_long": "TRUCK",
+    "unit_short": "TRK"
+  },
+  {
+    "id": "389200ba-c267-4070-99ac-463921e0c0a4",
+    "unit_long": "MICROGRAM",
+    "unit_short": "ΜG"
+  },
+  {
+    "id": "4b0ad93f-4b49-4241-b303-96c54e4e412a",
+    "unit_long": "CRATE",
+    "unit_short": "CRT"
+  },
+  {
+    "id": "eebe216c-d3f4-43d6-b529-40461a6ffab0",
+    "unit_long": "QUAD",
+    "unit_short": "QUAD"
+  }
+]

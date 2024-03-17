@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -23,25 +22,31 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import CreateableSelectOption from "@/components/admin/common/selects/createable-select";
 
 const formSchema = z.object({
+  itemType: z.string(),
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
+  category: z.array(z.string()),
   itemName: z.string().min(3, {
     message: "Item name shoud min 3 character",
   }),
   salePrice: z.string(),
-  itemType: z.string(),
 });
 
 export function AddEditProduct() {
+  const categoryOptions = [{ value: "general", label: "General" }];
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
-      salePrice: "",
       itemType: "product",
+      category: [],
+      username: "",
+      itemName: "",
+      salePrice: "",
     },
   });
 
@@ -58,11 +63,9 @@ export function AddEditProduct() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-8 border p-5 radius-3 rounded-md bg-white "
+              className=" border p-5 radius-3 rounded-md bg-white "
             >
-              <div className="grid grid-cols-2"></div>
-
-              <div className="grid grid-cols-2  gap-2">
+              <div className="grid grid-cols-2 gap-2">
                 <div className="">
                   <FormField
                     control={form.control}
@@ -103,23 +106,16 @@ export function AddEditProduct() {
                 <div className="">
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="category"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
                           Category <span className="text-red-500">*</span>
                         </FormLabel>
                         <FormControl>
-                          <Select>
-                            <SelectTrigger className="w-full">
-                              <SelectValue placeholder="Theme" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="light">Electronics</SelectItem>
-                              <SelectItem value="dark">Fast Food</SelectItem>
-                              <SelectItem value="system">Add New</SelectItem>
-                            </SelectContent>
-                          </Select>
+                          <CreateableSelectOption
+                            optionsData={categoryOptions}
+                          />
                         </FormControl>
 
                         <FormMessage />
