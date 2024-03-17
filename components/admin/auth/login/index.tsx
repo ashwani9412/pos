@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   mobileNumber: z.string().min(2, {
@@ -27,6 +29,7 @@ const formSchema = z.object({
 });
 
 export const AdminLoginPage = () => {
+  const router = useRouter();
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -43,7 +46,7 @@ export const AdminLoginPage = () => {
   }
 
   const handleRegister = () => {
-    console.log("register button");
+    router.push("/auth/register/companies", { scroll: false });
   };
 
   return (

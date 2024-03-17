@@ -1,4 +1,4 @@
-import { AdminLoginPage } from '@/components/admin/auth'
+import { AdminLoginPage } from '@/components/admin/auth/login'
 import React from 'react'
 
 export default function LoginPage() {
