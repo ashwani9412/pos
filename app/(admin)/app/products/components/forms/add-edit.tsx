@@ -23,34 +23,37 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import CreateableSelectOption from "@/components/admin/common/selects/createable-select";
+import { useState } from "react";
 
 const formSchema = z.object({
   itemType: z.string(),
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
   category: z.array(z.string()),
   itemName: z.string().min(3, {
-    message: "Item name shoud min 3 character",
+    message: "Please enter the item name min 3 character",
   }),
   salePrice: z.string(),
+  purchasePrice: z.string(),
+  gstRate: z.number(),
 });
 
 export function AddEditProduct() {
-  const categoryOptions = [{ value: "general", label: "General" }];
-
+  const categoryOptions = [{ label: "General", value: "general" }];
+  const [selectedCategories, setSelectedCategories] =
+    useState<any>(categoryOptions);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       itemType: "product",
       category: [],
-      username: "",
+
       itemName: "",
       salePrice: "",
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    const copyObj = values;
+    copyObj.category = selectedCategories;
     // Do something with the form values.
     console.log("onsubmit===>", values);
   }
@@ -114,7 +117,11 @@ export function AddEditProduct() {
                         </FormLabel>
                         <FormControl>
                           <CreateableSelectOption
+                            id="long-value-select"
+                            instanceId="long-value-select"
                             optionsData={categoryOptions}
+                            selectedCategories={selectedCategories}
+                            setSelectedCategories={setSelectedCategories}
                           />
                         </FormControl>
 
@@ -141,38 +148,7 @@ export function AddEditProduct() {
                     )}
                   />
                 </div>
-                <div>
-                  <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Username</FormLabel>
-                        <FormControl>
-                          <Input placeholder="shadcn" {...field} />
-                        </FormControl>
 
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div>
-                  <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Product Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Ex: Maggies 20gm" {...field} />
-                        </FormControl>
-
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
                 <div>
                   <FormField
                     control={form.control}
@@ -189,9 +165,63 @@ export function AddEditProduct() {
                     )}
                   />
                 </div>
-              </div>
 
-              <Button type="submit">Submit</Button>
+                <div>
+                  <FormField
+                    control={form.control}
+                    name="salePrice"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>M.R.P</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Ex: 150" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div>
+                  <FormField
+                    control={form.control}
+                    name="gstRate"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>GST Tax Rate(%)</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Ex: Maggies 20gm" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div>
+                  <FormField
+                    control={form.control}
+                    name="purchasePrice"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Purchase Price</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Eg: 100" {...field} />
+                        </FormControl>
+
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </div>
+              <Button className="my-2 bg-blue-500" type="submit">
+                SUBMIT
+              </Button>
+              <Button className="mx-2 bg-yellow-500" type="reset">
+                RESET
+              </Button>
+              <Button className="bg-red-500" type="reset">
+                CANCEL
+              </Button>
             </form>
           </Form>
         </div>
