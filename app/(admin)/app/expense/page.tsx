@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import { ExpenseForm } from "./components/form/add-edit";
 
 export const metadata = {
-    title: "Expense"
-}
+  title: "Expense",
+};
 
 export default function ExpensesPage() {
   return (
-    <div>ExpensesPage</div>
-  )
+    <div>
+      ExpensesPage
+      <ExpenseForm />
+    </div>
+  );
 }
