@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -23,29 +22,38 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import CreateableSelectOption from "@/components/admin/common/selects/createable-select";
+import { useState } from "react";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
+  itemType: z.string(),
+  category: z.array(z.string()),
   itemName: z.string().min(3, {
-    message: "Item name shoud min 3 character",
+    message: "Please enter the item name min 3 character",
   }),
   salePrice: z.string(),
-  itemType: z.string(),
+  purchasePrice: z.string(),
+  gstRate: z.number(),
 });
 
 export function AddEditProduct() {
+  const categoryOptions = [{ label: "General", value: "general" }];
+  const [selectedCategories, setSelectedCategories] =
+    useState<any>(categoryOptions);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
-      salePrice: "",
       itemType: "product",
+      category: [],
+
+      itemName: "",
+      salePrice: "",
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    const copyObj = values;
+    copyObj.category = selectedCategories;
     // Do something with the form values.
     console.log("onsubmit===>", values);
   }
@@ -58,11 +66,9 @@ export function AddEditProduct() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-8 border p-5 radius-3 rounded-md bg-white "
+              className=" border p-5 radius-3 rounded-md bg-white "
             >
-              <div className="grid grid-cols-2"></div>
-
-              <div className="grid grid-cols-2  gap-2">
+              <div className="grid grid-cols-2 gap-2">
                 <div className="">
                   <FormField
                     control={form.control}
@@ -103,23 +109,20 @@ export function AddEditProduct() {
                 <div className="">
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="category"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
                           Category <span className="text-red-500">*</span>
                         </FormLabel>
                         <FormControl>
-                          <Select>
-                            <SelectTrigger className="w-full">
-                              <SelectValue placeholder="Theme" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="light">Electronics</SelectItem>
-                              <SelectItem value="dark">Fast Food</SelectItem>
-                              <SelectItem value="system">Add New</SelectItem>
-                            </SelectContent>
-                          </Select>
+                          <CreateableSelectOption
+                            id="long-value-select"
+                            instanceId="long-value-select"
+                            optionsData={categoryOptions}
+                            selectedCategories={selectedCategories}
+                            setSelectedCategories={setSelectedCategories}
+                          />
                         </FormControl>
 
                         <FormMessage />
@@ -145,38 +148,7 @@ export function AddEditProduct() {
                     )}
                   />
                 </div>
-                <div>
-                  <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Username</FormLabel>
-                        <FormControl>
-                          <Input placeholder="shadcn" {...field} />
-                        </FormControl>
 
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div>
-                  <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Product Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Ex: Maggies 20gm" {...field} />
-                        </FormControl>
-
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
                 <div>
                   <FormField
                     control={form.control}
@@ -193,9 +165,63 @@ export function AddEditProduct() {
                     )}
                   />
                 </div>
-              </div>
 
-              <Button type="submit">Submit</Button>
+                <div>
+                  <FormField
+                    control={form.control}
+                    name="salePrice"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>M.R.P</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Ex: 150" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div>
+                  <FormField
+                    control={form.control}
+                    name="gstRate"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>GST Tax Rate(%)</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Ex: Maggies 20gm" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div>
+                  <FormField
+                    control={form.control}
+                    name="purchasePrice"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Purchase Price</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Eg: 100" {...field} />
+                        </FormControl>
+
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </div>
+              <Button className="my-2 bg-blue-500" type="submit">
+                SUBMIT
+              </Button>
+              <Button className="mx-2 bg-yellow-500" type="reset">
+                RESET
+              </Button>
+              <Button className="bg-red-500" type="reset">
+                CANCEL
+              </Button>
             </form>
           </Form>
         </div>
