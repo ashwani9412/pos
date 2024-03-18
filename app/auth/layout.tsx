@@ -1,5 +1,13 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from 'react'
 
-export default function AuthLayout({ children }: { children: ReactNode }) {
-  return <main>{children}</main>;
+export default function LoginLayout({children}: {children:ReactNode}) {
+  return (
+    <html lang='en'>
+    <body>
+        <main>
+            <div>{children}</div>
+        </main>
+    </body>
+    </html>
+  )
 }
