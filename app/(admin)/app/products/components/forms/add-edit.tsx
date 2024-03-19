@@ -24,16 +24,24 @@ import {
 import { Input } from "@/components/ui/input";
 import CreateableSelectOption from "@/components/admin/common/selects/createable-select";
 import { useState } from "react";
+import MultiSelects from "@/components/globals/selects/multi-selects";
+import { GSTRATE } from "@/constants";
 
 const formSchema = z.object({
   itemType: z.string(),
   category: z.array(z.string()),
-  itemName: z.string().min(3, {
-    message: "Please enter the item name min 3 character",
-  }),
-  salePrice: z.string(),
+  itemName: z
+    .string()
+    .trim()
+    .min(1, "Item name is required")
+    .max(150, { message: "Maximum limits is 150" }),
+  salePrice: z
+    .string()
+    .min(1, "Sale price is required")
+    .max(7, "Maximum 7 digits are allowed"),
   purchasePrice: z.string(),
-  gstRate: z.number(),
+  mrp: z.string(),
+  gstRate: z.string(),
 });
 
 export function AddEditProduct() {
@@ -44,17 +52,18 @@ export function AddEditProduct() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       itemType: "product",
-      category: [],
-
       itemName: "",
       salePrice: "",
+      purchasePrice: "",
+      mrp: "",
+      gstRate: "",
+      category: [],
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const copyObj = values;
     copyObj.category = selectedCategories;
-    // Do something with the form values.
     console.log("onsubmit===>", values);
   }
 
@@ -112,9 +121,7 @@ export function AddEditProduct() {
                     name="category"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>
-                          Category <span className="text-red-500">*</span>
-                        </FormLabel>
+                        <FormLabel>Category</FormLabel>
                         <FormControl>
                           <CreateableSelectOption
                             id="long-value-select"
@@ -124,7 +131,6 @@ export function AddEditProduct() {
                             setSelectedCategories={setSelectedCategories}
                           />
                         </FormControl>
-
                         <FormMessage />
                       </FormItem>
                     )}
@@ -140,9 +146,12 @@ export function AddEditProduct() {
                           Item Name <span className="text-red-500">*</span>
                         </FormLabel>
                         <FormControl>
-                          <Input placeholder="Ex: Maggies 20gm" {...field} />
+                          <Input
+                            type="text"
+                            placeholder="Ex: Maggies 20gm"
+                            {...field}
+                          />
                         </FormControl>
-
                         <FormMessage />
                       </FormItem>
                     )}
@@ -157,19 +166,36 @@ export function AddEditProduct() {
                       <FormItem>
                         <FormLabel>Sales Price</FormLabel>
                         <FormControl>
-                          <Input placeholder="Ex: Maggies 20gm" {...field} />
+                          <Input
+                            type="number"
+                            placeholder="Ex: 100"
+                            {...field}
+                          />
                         </FormControl>
-
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
-
                 <div>
                   <FormField
                     control={form.control}
-                    name="salePrice"
+                    name="purchasePrice"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Purchase Price</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Eg: 90" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div>
+                  <FormField
+                    control={form.control}
+                    name="mrp"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>M.R.P</FormLabel>
@@ -189,24 +215,13 @@ export function AddEditProduct() {
                       <FormItem>
                         <FormLabel>GST Tax Rate(%)</FormLabel>
                         <FormControl>
-                          <Input placeholder="Ex: Maggies 20gm" {...field} />
+                          <MultiSelects
+                            id="long-value-select"
+                            instanceId="long-value-select"
+                            optionData={GSTRATE}
+                            animation={false}
+                          />
                         </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div>
-                  <FormField
-                    control={form.control}
-                    name="purchasePrice"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Purchase Price</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Eg: 100" {...field} />
-                        </FormControl>
-
                         <FormMessage />
                       </FormItem>
                     )}
