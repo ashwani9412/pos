@@ -48,7 +48,7 @@ export function AddEditProduct() {
   const categoryOptions = [{ label: "General", value: "general" }];
   const [selectedCategories, setSelectedCategories] =
     useState<any>(categoryOptions);
-  const [selectedGSTRate, setSelectedGSTRate] = useState<any>(GSTRATE);
+  const [selectedGSTRate, setSelectedGSTRate] = useState<any>([]);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -64,8 +64,8 @@ export function AddEditProduct() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const copyObj = values;
-    copyObj.category = selectedCategories.value;
-    copyObj.gstRate = selectedGSTRate.value;
+    copyObj.category = selectedCategories;
+    copyObj.gstRate = selectedGSTRate;
     console.log("onsubmit===>", values);
   }
 
@@ -126,8 +126,8 @@ export function AddEditProduct() {
                         <FormLabel>Category</FormLabel>
                         <FormControl>
                           <CreateableSelectOption
-                            id="long-value-select"
-                            instanceId="long-value-select"
+                            id="long-value-select-create"
+                            instanceId="long-value-select-create"
                             optionsData={categoryOptions}
                             selectedCategories={selectedCategories}
                             setSelectedCategories={setSelectedCategories}

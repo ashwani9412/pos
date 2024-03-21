@@ -12,9 +12,9 @@ interface MultiSelectPropsI {
 }
 const animatedComponents = makeAnimated();
 const MultiSelects: FC<MultiSelectPropsI> = ({
-  optionData,
   id,
   instanceId,
+  optionData,
   selectedOptions,
   isMultiSelect,
   setSelectedOptions,
@@ -24,10 +24,10 @@ const MultiSelects: FC<MultiSelectPropsI> = ({
     id={id}
     instanceId={instanceId}
     isMulti={isMultiSelect}
-    defaultValue={selectedOptions}
+    options={optionData}
+    // defaultValue={selectedOptions}
     onChange={setSelectedOptions}
     components={animation && animatedComponents}
-    options={optionData}
   />
 );
 export default MultiSelects;

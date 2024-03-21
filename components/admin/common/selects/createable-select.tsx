@@ -22,9 +22,9 @@ const CreateableSelectOption = ({
       id={id}
       instanceId={instanceId}
       isClearable
-      defaultValue={selectedCategories}
-      onChange={setSelectedCategories}
       options={optionsData}
+      defaultValue={optionsData[0]}
+      onChange={setSelectedCategories}
     />
   );
 };
