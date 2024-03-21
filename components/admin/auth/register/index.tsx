@@ -1,15 +1,24 @@
-'use client'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
-import React from 'react'
-import CreateableSelectOption from '../../common/selects/createable-select'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+"use client";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import React, { useState } from "react";
+import CreateableSelectOption from "../../common/selects/createable-select";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from '@/components/ui/label'
-
+import { Label } from "@/components/ui/label";
+import MultiSelects from "@/components/globals/selects/multi-selects";
+import { GSTRATE } from "@/constants";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const formSchema = z.object({
   businessRegistrationType: z.string(),
@@ -23,7 +32,7 @@ const formSchema = z.object({
 });
 
 export default function RegisterAdminPage() {
-
+  const [selectedGSTRate, setSelectedGSTRate] = useState<any>(GSTRATE);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -37,23 +46,19 @@ export default function RegisterAdminPage() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const copyObj = values;
-    // copyObj.category = selectedCategories;
-    // Do something with the form values.
     console.log("onsubmit===>", values);
   }
 
   return (
-    <div className='grid  p-4'>
-      <div className='grid text-2xl place-content-center '>
-        Welcome, Create your new Account
-      </div>
-      <div className='m-10'>
-      <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="border p-5 radius-3 rounded-md bg-white "
-            >
-              <div className="grid grid-cols-2 gap-2">
+    <div className="grid p-4">
+      <div className="m-10 border p-5 radius-3 rounded-md bg-white">
+        <div className="grid text-2xl place-content-center">
+          Welcome, Create your new Account
+        </div>
+        <div className="p-10">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className=" ">
+              <div className="grid grid-cols-2 gap-6">
                 <div className="">
                   <FormField
                     control={form.control}
@@ -61,10 +66,14 @@ export default function RegisterAdminPage() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
-                          Your Business Name <span className="text-red-500">*</span>
+                          Your Business Name{" "}
+                          <span className="text-red-500">*</span>
                         </FormLabel>
                         <FormControl>
-                          <Input placeholder="Enter your business name" {...field} />
+                          <Input
+                            placeholder="Enter your business name"
+                            {...field}
+                          />
                         </FormControl>
 
                         <FormMessage />
@@ -72,18 +81,26 @@ export default function RegisterAdminPage() {
                     )}
                   />
                 </div>
-
                 <div>
                   <FormField
                     control={form.control}
                     name="businessType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Business type (select mutiple if applicable)</FormLabel>
+                        <FormLabel>
+                          Business type (select mutiple if applicable)
+                        </FormLabel>
                         <FormControl>
-                          <Input placeholder="Ex: Maggies 20gm" {...field} />
+                          <MultiSelects
+                            id="long-value-select"
+                            instanceId="long-value-select"
+                            optionData={GSTRATE}
+                            selectedOptions={selectedGSTRate}
+                            setSelectedOptions={setSelectedGSTRate}
+                            animation={false}
+                            isMultiSelect={true}
+                          />
                         </FormControl>
-
                         <FormMessage />
                       </FormItem>
                     )}
@@ -96,9 +113,17 @@ export default function RegisterAdminPage() {
                     name="businessRegistrationType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>M.R.P</FormLabel>
+                        <FormLabel>Business Registration Type</FormLabel>
                         <FormControl>
-                          <Input placeholder="Ex: 150" {...field} />
+                          <MultiSelects
+                            id="long-value-select"
+                            instanceId="long-value-select"
+                            optionData={GSTRATE}
+                            selectedOptions={selectedGSTRate}
+                            setSelectedOptions={setSelectedGSTRate}
+                            animation={false}
+                            isMultiSelect={false}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -113,7 +138,15 @@ export default function RegisterAdminPage() {
                       <FormItem>
                         <FormLabel>Industry Type</FormLabel>
                         <FormControl>
-                          <Input placeholder="Ex: Maggies 20gm" {...field} />
+                          <MultiSelects
+                            id="long-value-select"
+                            instanceId="long-value-select"
+                            optionData={GSTRATE}
+                            selectedOptions={selectedGSTRate}
+                            setSelectedOptions={setSelectedGSTRate}
+                            animation={false}
+                            isMultiSelect={false}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -127,7 +160,8 @@ export default function RegisterAdminPage() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
-                          Item Type <span className="text-red-500">*</span>
+                          Is your business GST registered?{" "}
+                          <span className="text-red-500">*</span>
                         </FormLabel>
                         <FormControl>
                           <RadioGroup
@@ -136,16 +170,16 @@ export default function RegisterAdminPage() {
                           >
                             <div className="flex items-center space-x-2">
                               <RadioGroupItem value="product" id="product" />
-                              <Label className="border border-gray-200 rounded-md p-3 w-200 -pl-32 -ml-5">
-                                Product
+                              <Label className="border border-gray-200 rounded-md p-3 w-[150px] -pl-32 -ml-5">
+                                Yes
                               </Label>
                               <div className="flex items-center space-x-2">
                                 <RadioGroupItem
                                   value="services"
                                   id="services-two"
                                 />
-                                <Label className="border border-gray-200 rounded-md p-3 w-200 -pl-32 -ml-5">
-                                  Service
+                                <Label className="border border-gray-200 rounded-md p-3 w-[150px] -pl-32 -ml-5">
+                                  No
                                 </Label>
                               </div>
                             </div>
@@ -157,43 +191,38 @@ export default function RegisterAdminPage() {
                     )}
                   />
                 </div>
-                <div className="">
-                  <FormField
-                    control={form.control}
-                    name="category"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>
-                          Category <span className="text-red-500">*</span>
-                        </FormLabel>
-                        <FormControl>
-                          {/* <CreateableSelectOption
-                            id="long-value-select"
-                            instanceId="long-value-select"
-                            optionsData={categoryOptions}
-                            selectedCategories={selectedCategories}
-                            setSelectedCategories={setSelectedCategories}
-                          /> */}
-                        </FormControl>
-
-                        <FormMessage/>
-                      </FormItem>
-                    )}
-                  />
-                </div>
               </div>
-              <Button className="my-2 bg-blue-500" type="submit">
-                SUBMIT
-              </Button>
-              <Button className="mx-2 bg-yellow-500" type="reset">
-                RESET
-              </Button>
-              <Button className="bg-red-500" type="reset">
-                CANCEL
-              </Button>
+              <div className="w-1/2 p-4 mx-auto text-center ">
+                <span className="text-gray-500">
+                  By completing registration you accept our
+                </span>{" "}
+                <span className="font-bold text-blue-400">
+                  Terms & Condition & Privacy Policy
+                </span>
+              </div>
+              <div className="grid w-[400px] mx-auto">
+                <Button
+                  className="my-2 hover:bg-blue-500  bg-blue-800"
+                  type="submit"
+                >
+                  SUBMIT
+                </Button>
+              </div>
+              <div className="w-1/2 p-4 mx-auto text-center ">
+                <span className="text-gray-500">
+                  Receive account updates and reminders on WhatApp
+                </span>
+              </div>
+              <div className="w-1/2 p-6 mx-auto text-xs text-center ">
+                <span className="text-gray-500">
+                  100% secure | ISO 27001 certified | Trusted by multiple small
+                  businesses
+                </span>
+              </div>
             </form>
           </Form>
+        </div>
       </div>
     </div>
-  )
+  );
 }
