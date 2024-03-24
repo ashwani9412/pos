@@ -1,3 +1,4 @@
+import { GSTRATE } from "@/constants";
 import React, { FC } from "react";
 import Select, { components } from "react-select";
 import makeAnimated from "react-select/animated";
@@ -9,6 +10,7 @@ interface MultiSelectPropsI {
   selectedOptions: any;
   setSelectedOptions: any;
   animation?: any;
+  defaultValues?: any;
 }
 const animatedComponents = makeAnimated();
 const MultiSelects: FC<MultiSelectPropsI> = ({
@@ -16,6 +18,7 @@ const MultiSelects: FC<MultiSelectPropsI> = ({
   instanceId,
   optionData,
   selectedOptions,
+  defaultValues,
   isMultiSelect,
   setSelectedOptions,
   animation,
@@ -25,7 +28,7 @@ const MultiSelects: FC<MultiSelectPropsI> = ({
     instanceId={instanceId}
     isMulti={isMultiSelect}
     options={optionData}
-    // defaultValue={selectedOptions}
+    defaultValue={defaultValues}
     onChange={setSelectedOptions}
     components={animation && animatedComponents}
   />

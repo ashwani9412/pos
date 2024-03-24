@@ -26,10 +26,11 @@ import CreateableSelectOption from "@/components/admin/common/selects/createable
 import { useState } from "react";
 import MultiSelects from "@/components/globals/selects/multi-selects";
 import { GSTRATE } from "@/constants";
+const purchasePricePercentage = 30;
 
 const formSchema = z.object({
   itemType: z.string(),
-  category: z.array(z.string()),
+  category: z.string(),
   itemName: z
     .string()
     .trim()
@@ -39,16 +40,30 @@ const formSchema = z.object({
     .string()
     .min(1, "Sale price is required")
     .max(7, "Maximum 7 digits are allowed"),
-  purchasePrice: z.string(),
+  purchasePrice: z
+    .string()
+    .max(7, { message: "Purchase price max limit is 7 " })
+    .refine((val) => !isNaN(val as unknown as number), {
+      message: "Purchase price should be a number",
+    }),
+  purchaseTaxType: z.string(),
+  saleTaxType: z.string(),
   mrp: z.string(),
   gstRate: z.string(),
 });
 
 export function AddEditProduct() {
+  //calculate purchasePricePercentage
+  const calculatePurchasePricePercentage = (
+    purchasePricePercentage: any,
+    salePrice: any
+  ) => {
+    return (salePrice * purchasePricePercentage) / 100;
+  };
+
   const categoryOptions = [{ label: "General", value: "general" }];
-  const [selectedCategories, setSelectedCategories] =
-    useState<any>(categoryOptions);
-  const [selectedGSTRate, setSelectedGSTRate] = useState<any>([]);
+  const [selectedCategories, setSelectedCategories] = useState<any>();
+  const [selectedGSTRate, setSelectedGSTRate] = useState<any>();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -56,17 +71,43 @@ export function AddEditProduct() {
       itemName: "",
       salePrice: "",
       purchasePrice: "",
+      purchaseTaxType: "withGST",
+      saleTaxType: "withGST",
       mrp: "",
       gstRate: "",
-      category: [],
+      category: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: any) {
     const copyObj = values;
-    copyObj.category = selectedCategories;
-    copyObj.gstRate = selectedGSTRate;
+    copyObj.category =
+      selectedCategories?.value === undefined || null
+        ? "General"
+        : selectedCategories?.value;
+    copyObj.gstRate =
+      selectedGSTRate?.value === undefined || null
+        ? "none"
+        : selectedGSTRate?.value;
+    copyObj.salePrice = {
+      salePrice: Number(values.salePrice),
+      gstType: values.saleTaxType,
+      tax: values.gstRate,
+    };
+    let purchasePriceAuto = calculatePurchasePricePercentage(
+      Number(copyObj?.salePrice.salePrice),
+      purchasePricePercentage
+    );
+    copyObj.purchasePrice = {
+      purchasePrice:
+        values.purchasePrice === ""
+          ? copyObj?.salePrice.salePrice - purchasePriceAuto
+          : Number(values.purchasePrice),
+      gstType: values.purchaseTaxType,
+      tax: values.gstRate,
+    };
     console.log("onsubmit===>", values);
+    // alert(JSON.stringify(values, null, 4));
   }
 
   return (
@@ -160,39 +201,112 @@ export function AddEditProduct() {
                   />
                 </div>
 
-                <div>
-                  <FormField
-                    control={form.control}
-                    name="salePrice"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Sales Price</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="number"
-                            placeholder="Ex: 100"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                <div className="grid grid-cols-2">
+                  <div className="flex">
+                    <FormField
+                      control={form.control}
+                      name="salePrice"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Sales Price</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="number"
+                              placeholder="Ex: 100"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div>
+                    <FormField
+                      control={form.control}
+                      name="saleTaxType"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Tax Type</FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Including Tax" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem
+                                value="withGST"
+                                defaultValue="withTax"
+                              >
+                                Including Tax
+                              </SelectItem>
+                              <SelectItem value="withoutGST">
+                                Excluding Tax
+                              </SelectItem>
+                            </SelectContent>
+                          </Select>
+
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
                 </div>
-                <div>
-                  <FormField
-                    control={form.control}
-                    name="purchasePrice"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Purchase Price</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Eg: 90" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                <div className="grid grid-cols-2">
+                  <div className="flex">
+                    <FormField
+                      control={form.control}
+                      name="purchasePrice"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Purchase Price</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Eg: 90" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <div>
+                    <FormField
+                      control={form.control}
+                      name="purchaseTaxType"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Tax Type</FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Including Tax" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem
+                                value="withGST"
+                                defaultValue="withTax"
+                              >
+                                Including Tax
+                              </SelectItem>
+                              <SelectItem value="withoutGST">
+                                Excluding Tax
+                              </SelectItem>
+                            </SelectContent>
+                          </Select>
+
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
                 </div>
                 <div>
                   <FormField
@@ -222,6 +336,7 @@ export function AddEditProduct() {
                             instanceId="long-value-select"
                             optionData={GSTRATE}
                             selectedOptions={selectedGSTRate}
+                            defaultValues={GSTRATE[0]}
                             setSelectedOptions={setSelectedGSTRate}
                             animation={false}
                             isMultiSelect={false}
